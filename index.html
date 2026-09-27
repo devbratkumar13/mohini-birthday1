@@ -43,20 +43,6 @@
 <div class="floating-balloon b1">🎈</div>
 <div class="floating-balloon b2">🎈</div>
 <div class="floating-balloon b3">🎈</div>
-
-<script>
-const music = document.getElementById("bgMusic");
-
-function startMusic() {
-    music.volume = 0.6;
-    music.play()
-        .then(() => {
-            console.log("Music started");
-        })
-        .catch(error => {
-            console.log("Music blocked:", error);
-        });
-}
-</script>
+<script src="script.js"></script>
 </body>
 </html>
