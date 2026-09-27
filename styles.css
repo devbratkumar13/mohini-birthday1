@@ -1,55 +1,467 @@
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap');
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{min-height:100vh;overflow-x:hidden;font-family:Poppins,Arial,sans-serif;color:#fff;background:#100712}
-body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:10;background:radial-gradient(circle at 50% 25%,rgba(255,110,170,.18),transparent 35%),radial-gradient(circle at 10% 90%,rgba(255,70,120,.12),transparent 30%)}
-.hidden{display:none!important}
-.intro{position:fixed;inset:0;z-index:1000;display:flex;align-items:center;justify-content:center;text-align:center;background:radial-gradient(circle at 50% 40%,#6c204f,#210b23 50%,#08040b);transition:opacity .9s,visibility .9s}
-.intro.hide{opacity:0;visibility:hidden}
-.intro-content{position:relative;width:min(720px,92%);padding:35px}
-.intro-heart{font-size:76px;animation:pulse 1.2s infinite;filter:drop-shadow(0 0 25px rgba(255,80,150,.7))}
-.intro h1{font-size:clamp(42px,9vw,80px);font-weight:500;margin:10px 0}
-.intro h1 span,h1 span,h2{font-family:"Great Vibes",cursive;color:#ff9fc5}
-.intro-text{color:#ffdce9;margin:0 auto 28px}
-.intro-glow{position:absolute;width:300px;height:300px;border-radius:50%;background:rgba(255,50,140,.16);filter:blur(50px);animation:glow 3s infinite alternate}
-@keyframes glow{to{transform:scale(1.4);opacity:.4}}
-.hero,.cake-page,.memories{position:relative;z-index:2}
-.page1{background:radial-gradient(circle at 50% 30%,#561b46 0,#1d0b20 45%,#09050b 100%);display:flex;align-items:center;justify-content:center;text-align:center}
-.hero{width:min(900px,92%);padding:70px 20px}
-.eyebrow{text-transform:uppercase;letter-spacing:4px;font-size:12px;color:#ffc4db;margin-bottom:18px}
-h1{font-size:clamp(42px,9vw,88px);line-height:1.02;font-weight:500;text-shadow:0 0 35px rgba(255,90,160,.4)}
-.divider{margin:28px 0;color:#ffc2d8;letter-spacing:8px}
-.typing{min-height:30px;color:#ffb2ce;font-size:18px;margin-bottom:18px}
-.message{font-size:clamp(15px,2.5vw,21px);line-height:1.9;color:#ffeaf2}
-.love{margin:25px auto 35px;max-width:680px;color:#ffb7d0;font-size:15px;line-height:1.8}
-.btn{border:1px solid rgba(255,190,215,.5);background:linear-gradient(135deg,#ff4f91,#b92870);color:white;padding:14px 25px;border-radius:999px;font:600 14px Poppins;cursor:pointer;box-shadow:0 10px 35px rgba(255,55,135,.28);transition:.3s;position:relative;z-index:20}
-.btn:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 15px 40px rgba(255,55,135,.45)}
-.music-pill{position:fixed;right:16px;top:16px;z-index:30;padding:9px 14px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,190,215,.25);backdrop-filter:blur(10px);font-size:11px;color:#ffd8e6;cursor:pointer}
-.floating-balloon{position:fixed;font-size:55px;opacity:.7;animation:float 5s ease-in-out infinite;z-index:1}
-.b1{left:7%;bottom:12%}.b2{right:8%;top:16%;animation-delay:1s}.b3{left:17%;top:12%;font-size:35px;animation-delay:2s}
-@keyframes float{50%{transform:translateY(-30px) rotate(5deg)}}
-.petal{position:fixed;top:-30px;z-index:15;pointer-events:none;animation:fall linear forwards;filter:drop-shadow(0 2px 3px rgba(0,0,0,.2))}
-@keyframes fall{to{transform:translateY(110vh) rotate(540deg);opacity:.15}}
-.page2{background:radial-gradient(circle at 50% 20%,#581735,#180918 65%);display:flex;align-items:center;justify-content:center;text-align:center}
-.cake-page{width:min(900px,94%);padding:55px 15px}
-.cake-page h1{font-size:clamp(38px,7vw,70px)}
-.subtitle{color:#f8dce7;line-height:1.8;margin:14px auto 24px;max-width:650px}
-.cake-wrap{width:min(680px,96vw);margin:20px auto;border-radius:25px;overflow:hidden;box-shadow:0 0 60px rgba(255,72,150,.28);border:1px solid rgba(255,200,225,.2)}
-.cake-wrap img{width:100%;display:block}
-.wish{max-width:650px;margin:20px auto 28px;line-height:1.8;color:#ffc8db}
-.page3{background:linear-gradient(135deg,#160912,#32102b 50%,#12070f);padding:50px 15px;text-align:center}
-.memories{max-width:1050px;margin:auto}
-.memories h1{font-size:clamp(42px,7vw,72px)}
-.gallery{margin:38px auto;display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:110px;gap:15px}
-.photo{margin:0;overflow:hidden;border-radius:18px;border:1px solid rgba(255,190,215,.3);box-shadow:0 12px 35px rgba(0,0,0,.35);background:#24101e}
-.photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s}
-.photo:hover img{transform:scale(1.07)}
-.p1{grid-column:span 5;grid-row:span 4}.p2{grid-column:span 4;grid-row:span 3}.p3{grid-column:span 3;grid-row:span 4}
-.p4{grid-column:span 4;grid-row:span 4}.p5{grid-column:span 3;grid-row:span 3}.p6{grid-column:span 5;grid-row:span 3}.p7{grid-column:span 4;grid-row:span 4}
-.final-card{max-width:720px;margin:45px auto 30px;padding:35px 25px;border:1px solid rgba(255,190,215,.25);background:rgba(255,255,255,.05);backdrop-filter:blur(12px);border-radius:25px}
-.big-heart{font-size:45px;animation:pulse 1.3s infinite}
-.final-card h2{font-size:48px;margin:5px 0 10px}
-.final-card p{line-height:1.9;color:#ffe3ec}
-.signature{margin-top:20px!important;color:#ffabc9!important;font-family:"Great Vibes",cursive;font-size:30px}
-@keyframes pulse{50%{transform:scale(1.18)}}
-@media(max-width:700px){.hero,.cake-page{padding:40px 15px}.gallery{grid-template-columns:repeat(2,1fr);grid-auto-rows:190px;gap:10px}.photo{grid-column:span 1!important;grid-row:span 1!important}.p1,.p4,.p6{grid-column:span 2!important}.final-card h2{font-size:40px}}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0
+}
+
+html{
+  scroll-behavior:smooth
+}
+
+body{
+  min-height:100vh;
+  overflow-x:hidden;
+  font-family:Poppins,Arial,sans-serif;
+  color:#fff;
+  background:#100712
+}
+
+body:before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:10;
+  background:
+    radial-gradient(circle at 50% 25%,rgba(255,110,170,.18),transparent 35%),
+    radial-gradient(circle at 10% 90%,rgba(255,70,120,.12),transparent 30%)
+}
+
+.hidden{
+  display:none!important
+}
+
+.intro{
+  position:fixed;
+  inset:0;
+  z-index:1000;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  background:
+    radial-gradient(circle at 50% 40%,#6c204f,#210b23 50%,#08040b);
+  transition:opacity .9s,visibility .9s
+}
+
+.intro.hide{
+  opacity:0;
+  visibility:hidden
+}
+
+.intro-content{
+  position:relative;
+  width:min(720px,92%);
+  padding:35px
+}
+
+.intro-heart{
+  font-size:76px;
+  animation:pulse 1.2s infinite;
+  filter:drop-shadow(0 0 25px rgba(255,80,150,.7))
+}
+
+.intro h1{
+  font-size:clamp(42px,9vw,80px);
+  font-weight:500;
+  margin:10px 0
+}
+
+.intro h1 span,
+h1 span,
+h2{
+  font-family:"Great Vibes",cursive;
+  color:#ff9fc5
+}
+
+.intro-text{
+  color:#ffdce9;
+  margin:0 auto 28px
+}
+
+.intro-glow{
+  position:absolute;
+  width:300px;
+  height:300px;
+  border-radius:50%;
+  background:rgba(255,50,140,.16);
+  filter:blur(50px);
+  animation:glow 3s infinite alternate
+}
+
+@keyframes glow{
+  to{
+    transform:scale(1.4);
+    opacity:.4
+  }
+}
+
+.hero,
+.cake-page,
+.memories{
+  position:relative;
+  z-index:2
+}
+
+.page1{
+  background:
+    radial-gradient(circle at 50% 30%,#561b46 0,#1d0b20 45%,#09050b 100%);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center
+}
+
+.hero{
+  width:min(900px,92%);
+  padding:70px 20px
+}
+
+.eyebrow{
+  text-transform:uppercase;
+  letter-spacing:4px;
+  font-size:12px;
+  color:#ffc4db;
+  margin-bottom:18px
+}
+
+h1{
+  font-size:clamp(42px,9vw,88px);
+  line-height:1.02;
+  font-weight:500;
+  text-shadow:0 0 35px rgba(255,90,160,.4)
+}
+
+.divider{
+  margin:28px 0;
+  color:#ffc2d8;
+  letter-spacing:8px
+}
+
+.typing{
+  min-height:30px;
+  color:#ffb2ce;
+  font-size:18px;
+  margin-bottom:18px
+}
+
+.message{
+  font-size:clamp(15px,2.5vw,21px);
+  line-height:1.9;
+  color:#ffeaf2
+}
+
+.love{
+  margin:25px auto 35px;
+  max-width:680px;
+  color:#ffb7d0;
+  font-size:15px;
+  line-height:1.8
+}
+
+.btn{
+  border:1px solid rgba(255,190,215,.5);
+  background:linear-gradient(135deg,#ff4f91,#b92870);
+  color:white;
+  padding:14px 25px;
+  border-radius:999px;
+  font:600 14px Poppins;
+  cursor:pointer;
+  box-shadow:0 10px 35px rgba(255,55,135,.28);
+  transition:.3s;
+  position:relative;
+  z-index:20
+}
+
+.btn:hover{
+  transform:translateY(-3px) scale(1.02);
+  box-shadow:0 15px 40px rgba(255,55,135,.45)
+}
+
+.music-pill{
+  position:fixed;
+  right:16px;
+  top:16px;
+  z-index:30;
+  padding:9px 14px;
+  border-radius:999px;
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,190,215,.25);
+  backdrop-filter:blur(10px);
+  font-size:11px;
+  color:#ffd8e6;
+  cursor:pointer
+}
+
+.floating-balloon{
+  position:fixed;
+  font-size:55px;
+  opacity:.7;
+  animation:float 5s ease-in-out infinite;
+  z-index:1
+}
+
+.b1{
+  left:7%;
+  bottom:12%
+}
+
+.b2{
+  right:8%;
+  top:16%;
+  animation-delay:1s
+}
+
+.b3{
+  left:17%;
+  top:12%;
+  font-size:35px;
+  animation-delay:2s
+}
+
+@keyframes float{
+  50%{
+    transform:translateY(-30px) rotate(5deg)
+  }
+}
+
+.petal{
+  position:fixed;
+  top:-30px;
+  z-index:15;
+  pointer-events:none;
+  animation:fall linear forwards;
+  filter:drop-shadow(0 2px 3px rgba(0,0,0,.2))
+}
+
+@keyframes fall{
+  to{
+    transform:translateY(110vh) rotate(540deg);
+    opacity:.15
+  }
+}
+
+.page2{
+  background:
+    radial-gradient(circle at 50% 20%,#581735,#180918 65%);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center
+}
+
+.cake-page{
+  width:min(900px,94%);
+  padding:55px 15px
+}
+
+.cake-page h1{
+  font-size:clamp(38px,7vw,70px)
+}
+
+.subtitle{
+  color:#f8dce7;
+  line-height:1.8;
+  margin:14px auto 24px;
+  max-width:650px
+}
+
+.cake-wrap{
+  width:min(680px,96vw);
+  margin:20px auto;
+  border-radius:25px;
+  overflow:hidden;
+  box-shadow:0 0 60px rgba(255,72,150,.28);
+  border:1px solid rgba(255,200,225,.2)
+}
+
+.cake-wrap img{
+  width:100%;
+  display:block
+}
+
+.wish{
+  max-width:650px;
+  margin:20px auto 28px;
+  line-height:1.8;
+  color:#ffc8db
+}
+
+.page3{
+  background:
+    linear-gradient(135deg,#160912,#32102b 50%,#12070f);
+  padding:50px 15px;
+  text-align:center
+}
+
+.memories{
+  max-width:1050px;
+  margin:auto
+}
+
+.memories h1{
+  font-size:clamp(42px,7vw,72px)
+}
+
+/* PHOTO GALLERY */
+
+.gallery{
+  margin:38px auto;
+  display:grid;
+  grid-template-columns:repeat(12,1fr);
+  grid-auto-rows:110px;
+  gap:15px
+}
+
+.photo{
+  margin:0;
+  overflow:hidden;
+  border-radius:18px;
+  border:1px solid rgba(255,190,215,.3);
+  box-shadow:0 12px 35px rgba(0,0,0,.35);
+  background:#24101e
+}
+
+.photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  transition:transform .6s
+}
+
+.photo:hover img{
+  transform:scale(1.07)
+}
+
+/* PHOTOS 1-10 */
+
+.p1{
+  grid-column:span 5;
+  grid-row:span 4
+}
+
+.p2{
+  grid-column:span 4;
+  grid-row:span 3
+}
+
+.p3{
+  grid-column:span 3;
+  grid-row:span 4
+}
+
+.p4{
+  grid-column:span 4;
+  grid-row:span 4
+}
+
+.p5{
+  grid-column:span 3;
+  grid-row:span 3
+}
+
+.p6{
+  grid-column:span 5;
+  grid-row:span 3
+}
+
+.p7{
+  grid-column:span 4;
+  grid-row:span 4
+}
+
+.p8{
+  grid-column:span 4;
+  grid-row:span 4
+}
+
+.p9{
+  grid-column:span 4;
+  grid-row:span 3
+}
+
+.p10{
+  grid-column:span 4;
+  grid-row:span 4
+}
+
+/* FINAL CARD */
+
+.final-card{
+  max-width:720px;
+  margin:45px auto 30px;
+  padding:35px 25px;
+  border:1px solid rgba(255,190,215,.25);
+  background:rgba(255,255,255,.05);
+  backdrop-filter:blur(12px);
+  border-radius:25px
+}
+
+.big-heart{
+  font-size:45px;
+  animation:pulse 1.3s infinite
+}
+
+.final-card h2{
+  font-size:48px;
+  margin:5px 0 10px
+}
+
+.final-card p{
+  line-height:1.9;
+  color:#ffe3ec
+}
+
+.signature{
+  margin-top:20px!important;
+  color:#ffabc9!important;
+  font-family:"Great Vibes",cursive;
+  font-size:30px
+}
+
+@keyframes pulse{
+  50%{
+    transform:scale(1.18)
+  }
+}
+
+/* MOBILE */
+
+@media(max-width:700px){
+
+  .hero,
+  .cake-page{
+    padding:40px 15px
+  }
+
+  .gallery{
+    grid-template-columns:repeat(2,1fr);
+    grid-auto-rows:190px;
+    gap:10px
+  }
+
+  .photo{
+    grid-column:span 1!important;
+    grid-row:span 1!important
+  }
+
+  .p1,
+  .p4,
+  .p6,
+  .p8,
+  .p10{
+    grid-column:span 2!important
+  }
+
+  .final-card h2{
+    font-size:40px
+  }
+
+  .music-pill{
+    right:10px;
+    top:10px
+  }
+}
