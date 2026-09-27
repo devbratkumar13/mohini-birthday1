@@ -7,6 +7,9 @@
 <link rel="stylesheet" href="styles.css">
 </head>
 <body class="page1">
+  <audio id="bgMusic" loop preload="auto">
+    <source src="assets/birthday.mp3" type="audio/mpeg">
+</audio>
 <div id="intro" class="intro">
   <div class="intro-glow"></div>
   <div class="intro-content">
@@ -14,7 +17,7 @@
     <p class="eyebrow">A little surprise made just for you</p>
     <h1>Hey, <span>Mohini</span>...</h1>
     <p class="intro-text">Someone has prepared something special for you.</p>
-    <button class="btn" id="openBtn">Tap to open your surprise ✨</button>
+    <button class="btn" id="openBtn" onclick="startMusic()">Tap to open your surprise...</button>
   </div>
 </div>
 
@@ -41,6 +44,19 @@
 <div class="floating-balloon b2">🎈</div>
 <div class="floating-balloon b3">🎈</div>
 
-<script src="script.js"></script>
+<script>
+const music = document.getElementById("bgMusic");
+
+function startMusic() {
+    music.volume = 0.6;
+    music.play()
+        .then(() => {
+            console.log("Music started");
+        })
+        .catch(error => {
+            console.log("Music blocked:", error);
+        });
+}
+</script>
 </body>
 </html>
